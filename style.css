@@ -5,3 +5,15 @@ Version: 1.0.0
 Description: Este es un tema simple para Wordpress
 Tags: curso, cutom
 */
+
+header
+{
+    background-color: #000;
+    color: #fff;
+}
+
+footer
+{
+    background-color: rgb(156, 25, 25);
+    color: #fff;
+}

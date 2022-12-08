@@ -1,5 +1,19 @@
 <?php
 
+add_action( 'after_setup_theme', 'add_features' );
+
+function add_features() 
+{
+
+    // New features 
+    add_theme_support( 'post-thumbnails' );
+
+    // Custom image sizes 
+    add_image_size( 'my_theme_thumbnail', 700, 350, true );
+    add_image_size( 'my_theme_feature_image', 900, 400, true );
+
+}
+
 add_action( 'wp_enqueue_scripts', 'add_assets' );
 
 function add_assets()

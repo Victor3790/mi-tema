@@ -11,7 +11,7 @@
         <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
     </header>
     <!-- Preview image figure-->
-    <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>
+    <figure class="mb-4"><?php the_post_thumbnail( 'my_theme_feature_image', [ 'class' => 'img-fluid' ] ); ?></figure>
     <!-- Post content-->
     <section class="mb-5">
         <?php the_content(); ?>

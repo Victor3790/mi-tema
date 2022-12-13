@@ -1,13 +1,53 @@
 <?php get_header(); ?>
-    <!-- Page header with logo and tagline-->
-    <header class="py-5 bg-light border-bottom mb-4 hero">
-        <div class="container">
-            <div class="text-center my-5 hero__text">
-                <h1 class="fw-bolder">Welcome to Blog Home!</h1>
-                <p class="lead mb-0">A Bootstrap 5 starter layout for your next blog homepage</p>
+
+    <?php if( is_home() ) : ?> 
+
+        <!-- Home Page header -->
+        <header class="py-5 bg-light border-bottom mb-4 hero">
+            <div class="container">
+                <div class="text-center my-5 hero__text">
+                    <h1 class="fw-bolder">Welcome to Blog Home!</h1>
+                    <p class="lead mb-0">A Bootstrap 5 starter layout for your next blog homepage</p>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
+
+    <?php elseif( is_search() ) : ?>
+
+        <!-- Search results Page header -->
+        <header class="py-5 mb-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1>Resultados para la búsqueda: <?php echo $_GET['s']; ?></h1>
+                        <p>
+                            <?php
+
+                                global $wp_query;
+                                echo 'Entradas encontradas: ' . $wp_query->found_posts;
+
+                            ?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+    <?php elseif( is_archive() ) : ?>
+
+        <!-- Archive Page header -->
+        <header class="py-5 mb-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1><?php echo get_the_archive_title(); ?></h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+    <?php endif; ?> 
+
     <!-- Page content-->
     <div class="container">
         <div class="row">

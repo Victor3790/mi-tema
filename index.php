@@ -19,7 +19,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <h1>Resultados para la búsqueda: <?php echo $_GET['s']; ?></h1>
+                        <h1>Resultados para la búsqueda: <?php echo get_search_query(); ?></h1>
                         <p>
                             <?php
 

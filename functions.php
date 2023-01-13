@@ -38,3 +38,17 @@ function add_assets()
     );
 
 }
+
+add_action( 'parse_query', 'sanitize_search' );
+
+function sanitize_search( $query_object ) 
+{
+
+    if( ! is_search() )
+        return; 
+
+    $sanitized_query = wp_kses( $query_object->get('s'), array() ); 
+
+    $query_object->set( 's', $sanitized_query );
+
+}

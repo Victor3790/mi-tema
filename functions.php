@@ -14,6 +14,13 @@ function add_features()
 
 }
 
+add_action( 'after_setup_theme', 'add_menus' );
+
+function add_menus()
+{
+    register_nav_menus(array('Primary' => 'Menú principal.'));
+}
+
 add_action( 'wp_enqueue_scripts', 'add_assets' );
 
 function add_assets()

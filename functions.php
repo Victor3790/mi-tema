@@ -1,5 +1,7 @@
 <?php
 
+require get_template_directory() . '/includes/class-my-theme-walker-nav-menu.php';
+
 add_action( 'after_setup_theme', 'add_features' );
 
 function add_features() 
